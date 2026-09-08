@@ -1,6 +1,6 @@
 # Retrofitting an existing project
 
-This file and `tools/apply-to-project.sh` belong on the `migration-tools` branch, not the template `main` branch.
+This file and `tools/apply-to-project.sh` belong on the `migration-tools` branch, not the template `template` branch.
 
 From a checkout of the `migration-tools` branch:
 
