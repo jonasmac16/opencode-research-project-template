@@ -12,6 +12,7 @@ When these facts are known and still relevant, preserve them in the checkpoint. 
 
 ### Objective and scientific state
 - Current analysis question/objective and current status.
+- Project-specific scientific/language constraints from `.opencode/project-profile.md` when they are relevant to resuming correctly; do not invent or reinterpret them.
 - Important scientific/statistical assumptions and decisions.
 - Filtering, exclusion, grouping, weighting, unit, and join-cardinality decisions.
 - Random seeds and important parameters that affect results.
@@ -30,7 +31,7 @@ When these facts are known and still relevant, preserve them in the checkpoint. 
 ### Code and output state
 - Files intentionally modified and important entry points/functions involved.
 - Intermediate/final outputs produced, invalidated, stale, or still pending.
-- Decisions that are not obvious from committed code or project AGENTS.md.
+- Decisions that are not obvious from committed code or project AGENTS.md or `.opencode/project-profile.md`.
 
 ### Verification
 - Exact checks/tests/linters/type checks/data validations already run and their outcomes.

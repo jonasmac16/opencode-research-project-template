@@ -18,4 +18,4 @@ Include only what is relevant and known:
 - unresolved issues/blockers;
 - next concrete actions.
 
-Do not copy conversational prose or large command output. Do not duplicate facts that are already obvious from `AGENTS.md`, committed documentation, or source files unless they are essential to resume. Keep the file concise (normally under 150 lines).
+Do not copy conversational prose or large command output. Do not duplicate facts that are already obvious from `AGENTS.md`, `.opencode/project-profile.md`, committed documentation, or source files unless they are essential to resume. Keep the file concise (normally under 150 lines).
