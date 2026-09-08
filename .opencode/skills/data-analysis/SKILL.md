@@ -5,7 +5,7 @@ description: Implement, modify, debug, or understand data-analysis and data-proc
 
 # Data analysis workflow
 
-1. Inspect repository evidence before choosing a language/tool workflow.
+1. Inspect repository evidence and `.opencode/project-profile.md` when initialized before choosing a language/tool workflow.
 2. Identify the relevant input -> transformation -> output path and the narrowest executable entry point.
 3. Load only the reference files needed for the current task:
    - Python: `references/python.md`
@@ -18,5 +18,6 @@ description: Implement, modify, debug, or understand data-analysis and data-proc
 6. Prefer focused/small-input execution before expensive full-data work.
 7. Use `data-validation` for transformations whose correctness depends on schema, identifiers, filtering, joins, grouping, or output contracts.
 8. Use `reproducibility` when external DataLad inputs, Apptainer environments, provenance, or exact rerunability matter.
+9. Use `scientific-analysis` when biological identity, study design, statistical inference, mathematical models, numerical validity, or scientific interpretation affects correctness.
 
-Do not load guidance for languages or tools absent from the current task.
+Do not load guidance for languages or tools absent from the current task. After `/init-analysis`, do not introduce a language classified as unused merely for implementation convenience.

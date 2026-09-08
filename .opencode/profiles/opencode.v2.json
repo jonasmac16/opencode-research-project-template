@@ -14,8 +14,18 @@
   },
   "lsp": {
     "r-languageserver": {
-      "command": ["R", "--no-echo", "-e", "languageserver::run()"],
-      "extensions": [".R", ".r", ".Rmd", ".rmd"]
+      "command": [
+        "R",
+        "--no-echo",
+        "-e",
+        "languageserver::run()"
+      ],
+      "extensions": [
+        ".R",
+        ".r",
+        ".Rmd",
+        ".rmd"
+      ]
     }
   }
 }

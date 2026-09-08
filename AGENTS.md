@@ -1,5 +1,5 @@
 # Baseline instructions for this data-analysis project
-These baseline rules apply to this repository. Use `/init` to refine this file with concrete project facts and commands while preserving applicable safety, provenance, and reproducibility rules.
+These baseline rules apply to this repository. For a new project from this template, run `/init-analysis` before `/init`. `/init-analysis` owns `.opencode/project-profile.md`; `/init` should refine this file with concrete repository facts and commands while preserving applicable safety, provenance, reproducibility, and scientific-validity rules.
 
 ## Work from evidence
 
@@ -23,6 +23,22 @@ When relevant, identify:
 8. executable entry points.
 
 Do not infer semantic meaning from filenames when code, metadata, schemas, or documentation can establish it.
+
+## Scientific project profile and validity
+
+`.opencode/project-profile.md` is the canonical project-specific scientific/language profile produced by `/init-analysis`. Before substantive scientific analysis or interpretation, consult it when present and initialized. Do not duplicate its project facts into `AGENTS.md` unless an operational instruction genuinely belongs here.
+
+Scientific correctness is distinct from software correctness. When relevant:
+
+- identify the scientific question and analysis type;
+- distinguish unit of observation from unit of inference;
+- preserve meaningful subject/sample/replicate/visit/run or analogous hierarchy;
+- respect experimental/study design, pairing, repeated measures, clustering, batch, and data-splitting boundaries;
+- make biological/mathematical/statistical assumptions explicit;
+- version reference genomes, annotations, databases, coordinate systems, model parameter sources, or other scientific references that can change results;
+- preserve units, parameter conventions, random seeds, and numerical tolerances when they affect conclusions.
+
+Use the `scientific-analysis` skill for domain-specific guidance. A successful run or passing software test does not by itself establish numerical, statistical, or scientific validity.
 
 ## Protect data
 
@@ -84,7 +100,7 @@ Treat unexpected many-to-many joins, silent coercions, severe row loss, and unex
 
 ## Language-specific work
 
-Use the `data-analysis` skill for language-specific guidance. Follow the repository's existing dependency, formatting, linting, typing, testing, and packaging choices; do not introduce a second toolchain without a concrete need.
+Use the `data-analysis` skill for language-specific guidance. Treat the initialized `.opencode/project-profile.md` and retained language references as authoritative for supported languages. Follow the repository's existing dependency, formatting, linting, typing, testing, and packaging choices; do not introduce a pruned/unused language or a second toolchain without a concrete need and explicit user agreement.
 
 ## LSP and diagnostics
 
@@ -126,17 +142,17 @@ Repositories, DataLad datasets, container sources, and resources outside the cur
 
 ## What `/init` should add for this project
 
-A project `AGENTS.md` should capture concrete facts that can be established from the repository, including as applicable:
+After `/init-analysis`, `/init` should capture concrete operational facts that can be established from the repository. Treat `.opencode/project-profile.md` as authoritative for scientific domain/language profile rather than duplicating it here. Add, as applicable:
 
 - project purpose and outputs;
-- languages actually used;
+- language-specific commands, environments, and file locations only for languages retained by `.opencode/project-profile.md`;
 - important directories and pipeline entry points;
 - test, lint, format, type-check, and validation commands;
 - expected Apptainer image and invocation;
 - external dataset locations/acquisition mechanisms and DataLad conventions;
 - output/intermediate locations;
 - expensive or unsafe operations to avoid;
-- project-specific statistical/scientific assumptions;
+- operational consequences of project-specific scientific assumptions when they affect commands, validation, or safety;
 - documentation conventions and known operational gotchas.
 
-Do not add instructions for languages or tools that the repository does not use.
+Do not add instructions for languages or tools that the repository does not use. Do not remove or weaken the baseline safety, provenance, reproducibility, data-validation, or scientific-validity rules above.

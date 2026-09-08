@@ -21,7 +21,8 @@ Prioritize substantive findings over style. Look for:
 - incorrect filters, joins, grouping, ordering, aggregation, or identifier assumptions;
 - silent coercions, unit errors, missing-value mistakes, and record loss/multiplication;
 - data leakage, train/test contamination, circular analysis, or invalid reuse of derived information;
-- statistical/scientific assumptions that are contradicted by the implementation;
+- statistical/scientific assumptions that are contradicted by the implementation or `.opencode/project-profile.md`;
+- incorrect scientific unit of analysis/inference, replicate handling, reference-resource identity, or numerical/model assumptions;
 - non-determinism, hidden interactive state, undocumented parameters, or stale cached outputs;
 - DataLad provenance gaps or unintended mutation of external data;
 - execution outside the documented Apptainer environment;
