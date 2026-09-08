@@ -44,6 +44,7 @@ copy_item() {
 copy_item "$ROOT/AGENTS.md" "$TARGET/AGENTS.md"
 copy_item "$ROOT/opencode.json" "$TARGET/opencode.json"
 copy_item "$ROOT/.opencode/.gitignore" "$TARGET/.opencode/.gitignore"
+copy_item "$ROOT/.opencode/project-profile.md" "$TARGET/.opencode/project-profile.md"
 
 for group in agents commands plugins skills profiles bin; do
   for child in "$ROOT/.opencode/$group"/*; do
@@ -54,6 +55,7 @@ done
 
 copy_item "$ROOT/docs/DECISIONS.md" "$TARGET/docs/DECISIONS.md"
 copy_item "$ROOT/docs/CONFIG-PROFILES.md" "$TARGET/docs/CONFIG-PROFILES.md"
+copy_item "$ROOT/docs/INITIALIZATION.md" "$TARGET/docs/INITIALIZATION.md"
 copy_item "$ROOT/docs/LSP.md" "$TARGET/docs/LSP.md"
 
 chmod +x "$TARGET/.opencode/bin/opencode-data" \
@@ -61,4 +63,4 @@ chmod +x "$TARGET/.opencode/bin/opencode-data" \
   "$TARGET/.opencode/bin/select-profile.sh"
 
 printf '\nApplied only project-local OpenCode files. No files under ~/.config/opencode were modified.\n'
-printf 'Next: cd %s && ./.opencode/bin/check-environment.sh && ./.opencode/bin/opencode-data, then run /init.\n' "$TARGET"
+printf 'Next: cd %s and launch OpenCode, then run /init-analysis followed by /init (and optionally /review-init).\n' "$TARGET"
