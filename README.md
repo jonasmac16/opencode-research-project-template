@@ -202,4 +202,4 @@ The baseline assumes:
 
 ## Retrofitting an existing repository
 
-Migration tooling is intentionally not included on the template `main` branch. Use the companion `migration-tools` branch to retrofit this configuration into an existing project without copying migration utilities into every new repository.
+Migration tooling is intentionally not included on the template `template` branch. Use the companion `migration-tools` branch to retrofit this configuration into an existing project without copying migration utilities into every new repository.
