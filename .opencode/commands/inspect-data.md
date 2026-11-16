@@ -1,9 +1,10 @@
 ---
-description: Inspect a dataset or data-processing boundary in an isolated child session without modifying source data
-agent: plan
-subagent: true
+description: Inspect dataset schema, dimensions, missingness, and scientific grain locally
+agent: local-inspector
+model: ollama/qwen3-coder-32k:14b
 subtask: true
 ---
+
 
 Inspect $ARGUMENTS as a data-analysis input, intermediate, or output.
 

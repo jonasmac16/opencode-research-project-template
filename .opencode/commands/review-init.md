@@ -1,8 +1,9 @@
 ---
-description: Check that /init preserved scientific profile boundaries and produced coherent project instructions
-agent: plan
-subagent: true
+description: Check consistency between project-profile.md, AGENTS.md, and pruned repository configuration
+model: opencode-go/kimi-k2.7-code
+subtask: true
 ---
+
 
 Review repository initialization after `/init-analysis` and `/init`.
 

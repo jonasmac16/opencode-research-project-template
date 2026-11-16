@@ -1,37 +1,27 @@
-# Project-local LSP integration
+# OpenCode startup and LSP
 
-LSP configuration is stored in this repository's project config; no global LSP setting or shell profile is changed.
+## Standard startup
 
-## OpenCode V1/current
-
-The LSP tool is experimental and requires `OPENCODE_EXPERIMENTAL_LSP_TOOL=true` (or the broader experimental flag). Launching with:
+Start OpenCode from the project root with the standard command:
 
 ```sh
-./.opencode/bin/opencode-data
+opencode
 ```
 
-sets that variable only for the `opencode` process started by the script.
+Use the host installation for routine work.
 
-The unspecialized project config declares an R server:
+## Apptainer/container startup
 
-```text
-R --no-echo -e languageserver::run()
-```
-
-The R `languageserver` package must already be installed in the R environment that launches OpenCode. Python/Julia server availability depends on the OpenCode/runtime installation and project tooling.
-
-`/init-analysis` should remove project-local language-specific LSP configuration when that language is confirmed unused. `.opencode/bin/check-environment.sh` determines which Python/R/Julia checks to run from the retained language reference files.
-
-## OpenCode V2 beta
-
-As of 2026-09-08, V2 accepts and preserves `lsp` configuration but does not start/download language servers, expose an LSP tool, or return LSP diagnostics. Select the V2 local profile with:
+When the documented environment is an Apptainer container, run OpenCode through the container instead of the host installation. The exact invocation depends on the image and entry point recorded in `.opencode/project-profile.md` or `AGENTS.md`, for example:
 
 ```sh
-./.opencode/bin/select-profile.sh v2
+apptainer exec <image.sif> opencode
+# or
+apptainer run <image.sif> opencode
 ```
 
-Then run `opencode2` and rely on project lint/type/test/compiler commands for verification.
+## LSP integration
 
-## Container caveat
+Project LSP configuration is stored in `opencode.json`. OpenCode may use installed language servers for navigation and advisory diagnostics when `permission.lsp` is `allow`. Availability depends on the host/container environment and the relevant language runtime.
 
-If analysis executes inside Apptainer while a language server runs on the host, dependency versions and filesystem paths may differ. Use LSP for navigation/advisory diagnostics; treat checks executed in the documented project/container environment as authoritative.
+Do not rely on LSP as the sole form of verification. Treat project lint, type-check, test, and compiler commands as authoritative, particularly when a language server runs on the host while analysis executes inside Apptainer.

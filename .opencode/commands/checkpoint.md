@@ -1,6 +1,8 @@
 ---
-description: Write a compact durable checkpoint for resuming the current analysis in a fresh session
+description: Write concise transient resume state to .opencode/session-state.md
+model: opencode-go/deepseek-v4.1-flash
 ---
+
 
 Inspect the current conversation and project state. Update `.opencode/session-state.md` with only durable information needed to resume this work in a fresh OpenCode session.
 

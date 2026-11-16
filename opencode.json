@@ -1,5 +1,5 @@
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://opencode.ai",
   "compaction": {
     "auto": true,
     "prune": true,
@@ -11,22 +11,36 @@
     "lsp": "allow"
   },
   "lsp": {
-    "r-languageserver": {
-      "command": [
-        "R",
-        "--no-echo",
-        "-e",
-        "languageserver::run()"
-      ],
-      "extensions": [
-        ".R",
-        ".r",
-        ".Rmd",
-        ".rmd"
-      ]
+    "r": {
+      "command": ["R", "--slave", "-e", "languageserver::run()"],
+      "extensions": [".R", ".r", ".Rmd", ".rmd", ".qmd"]
     }
   },
-  "instructions": [
-    ".opencode/project-profile.md"
-  ]
+  "agent": {
+    "build": {
+      "model": "opencode-go/kimi-k2.7-code"
+    },
+    "plan": {
+      "model": "opencode-go/kimi-k3.1-pro"
+    },
+    "compaction": {
+      "model": "opencode-go/deepseek-v4.1-flash"
+    },
+    "analysis-reviewer": {
+      "model": "openai/o4-mini"
+    },
+    "openai-critic": {
+      "description": "Institutional OpenAI second-opinion reviewer for statistical validity, proofs, and subtle bugs",
+      "mode": "subagent",
+      "model": "openai/gpt-5",
+      "permission": {
+        "edit": "deny"
+      }
+    },
+    "local-inspector": {
+      "description": "Local RTX 4070 Ti subagent for air-gapped data inspection and schema checks",
+      "mode": "subagent",
+      "model": "ollama/qwen3-coder-32k:14b"
+    }
+  }
 }

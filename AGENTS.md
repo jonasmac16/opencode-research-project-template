@@ -65,6 +65,7 @@ Datasets consumed by the analysis may be outside the current worktree.
 
 Prefer the environment documented by the project.
 
+- Start OpenCode with the standard host command `opencode` from the project root. When the project specifies an Apptainer container, use the documented container invocation (for example, `apptainer exec <image.sif> opencode`).
 - When an Apptainer container is the expected environment, run analysis commands through it rather than modifying the host environment.
 - Do not install host or container packages interactively merely to make a command work unless dependency modification is part of the task.
 - Do not silently substitute another image or the host environment.

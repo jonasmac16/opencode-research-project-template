@@ -1,9 +1,10 @@
 ---
-description: Review current analysis changes in an isolated child session
+description: Audit analysis code and outputs across computational, numerical, statistical, and scientific validity
 agent: analysis-reviewer
-subagent: true
+model: openai/o4-mini
 subtask: true
 ---
+
 
 Review the current analysis/processing changes. If arguments are supplied, focus on: $ARGUMENTS
 

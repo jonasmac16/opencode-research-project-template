@@ -1,7 +1,10 @@
 ---
-description: Scientifically profile and specialize a new analysis project before running /init
-subagent: false
+description: Initialize project scientific identity, language specialization, and domain references
+agent: plan
+model: opencode-go/kimi-k3.1-pro
+subtask: false
 ---
+
 
 Initialize the scientific/data-analysis profile for this repository before the built-in `/init` step.
 
@@ -57,7 +60,7 @@ For each confirmed unused language among Python, R, and Julia:
 
 - remove its `.opencode/skills/data-analysis/references/<language>.md` file;
 - remove the corresponding language bullet from `.opencode/skills/data-analysis/SKILL.md`;
-- remove project-local LSP configuration that exists only for that language from `opencode.json` and both `.opencode/profiles/opencode.v1.json` and `.opencode/profiles/opencode.v2.json`;
+- remove project-local LSP configuration that exists only for that language from `opencode.json`;
 - ensure `.opencode/bin/check-environment.sh` will no longer warn about that language. The baseline checker is designed to infer enabled language support from the remaining language reference files, so do not hard-code a new language list there.
 
 Do not remove shell or Markdown/documentation support. Do not add a new programming language just because an agent prefers it.
