@@ -1,4 +1,4 @@
-
+{
   "$schema": "https://opencode.ai",
   "compaction": {
     "auto": true,
@@ -14,38 +14,6 @@
     "r": {
       "command": ["R", "--slave", "-e", "languageserver::run()"],
       "extensions": [".R", ".r", ".Rmd", ".rmd", ".qmd"]
-    }
-  },
-  "agent": {
-    "build": {
-      "model": "opencode-go/kimi-k2.7-code",
-      "reasoningEffort": "medium"
-    },
-    "plan": {
-      "model": "opencode-go/kimi-k3.1-pro",
-      "reasoningEffort": "high"
-    },
-    "compaction": {
-      "model": "opencode-go/deepseek-v4.1-flash",
-      "reasoningEffort": "low"
-    },
-    "analysis-reviewer": {
-      "model": "openai/gpt-6.1-sol",
-      "reasoningEffort": "medium"
-    },
-    "openai-critic": {
-      "description": "Institutional OpenAI second-opinion reviewer for statistical validity, proofs, and subtle bugs",
-      "mode": "subagent",
-      "model": "openai/gpt-6-astra",
-      "reasoningEffort": "high",
-      "permission": {
-        "edit": "deny"
-      }
-    },
-    "local-inspector": {
-      "description": "Local RTX 4070 Ti subagent for air-gapped data inspection and schema checks",
-      "mode": "subagent",
-      "model": "ollama/qwen3-coder-32k:14b"
     }
   }
 }
