@@ -30,7 +30,7 @@
       "reasoningEffort": "low"
     },
     "analysis-reviewer": {
-      "model": "openai/gpt-6-astra",
+      "model": "openai/gpt-6.1-sol",
       "reasoningEffort": "medium"
     },
     "openai-critic": {
